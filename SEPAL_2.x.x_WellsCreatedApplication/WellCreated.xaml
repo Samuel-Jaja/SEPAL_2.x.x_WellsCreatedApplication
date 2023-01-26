@@ -1,0 +1,38 @@
+﻿<Window x:Class="SEPAL_2.x.x_WellsCreatedApplication.WellCreated"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SEPAL_2.x.x_WellsCreatedApplication"
+        mc:Ignorable="d"
+        Title="WellCreated" Height="400" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock  Text="Wells" FontSize="35" HorizontalAlignment="Center"></TextBlock>
+        
+        <DataGrid Grid.Row="1" CanUserAddRows="False" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserDeleteRows="False" ItemsSource="{Binding WellModel}" Margin="4" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Well Name" Binding="{Binding WellName}" />
+                <DataGridTextColumn Width="*" Header="Drainage Point" Binding="{Binding DrainagePoint}"/>
+                <DataGridTextColumn Width="*" Header="Created By" Binding="{Binding CreatedBy}"/>
+                <DataGridTextColumn Width="*" Header="Field Name" Binding="{Binding FieldName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <DockPanel Grid.Row="2" Margin="5 0 5 5">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Text="Status"/>
+                <TextBlock Text="{Binding Status}"/>
+            </StackPanel>
+            <Button Content="Listen for Data" Command="{Binding ListenCommand}" Height="22" HorizontalAlignment="Right">
+                
+            </Button>
+        </DockPanel>
+        
+    </Grid>
+</Window>

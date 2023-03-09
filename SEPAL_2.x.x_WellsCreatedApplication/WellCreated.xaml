@@ -12,7 +12,8 @@
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        
+
+        <TextBlock Text="hahahaha yes i can worry"/>
         <TextBlock  Text="Wells" FontSize="35" HorizontalAlignment="Center"></TextBlock>
         
         <DataGrid Grid.Row="1" CanUserAddRows="False" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserDeleteRows="False" ItemsSource="{Binding WellModel}" Margin="4" >
